@@ -192,6 +192,8 @@ void Plugin::result(KJob *job)
         return;
 
     m_model->setProblems(aj->problems());
+
+    ICore::self()->uiController()->findToolView(i18nd("kdevproblemreporter", "Problems"), 0, KDevelop::IUiController::FindFlags::Raise);
 }
 
 KDevelop::ContextMenuExtension Plugin::contextMenuExtension(KDevelop::Context* context)

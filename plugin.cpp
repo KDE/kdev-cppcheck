@@ -179,7 +179,7 @@ void Plugin::runCppcheckAll()
    bool allFiles = true;
    runCppcheck(allFiles);
 }
- 
+
 
 void Plugin::loadOutput()
 {
@@ -192,6 +192,8 @@ void Plugin::result(KJob *job)
         return;
 
     m_model->setProblems(aj->problems());
+
+    core()->uiController()->findToolView(i18nd("kdevproblemreporter", "Problems"), 0, KDevelop::IUiController::FindFlags::Raise);
 }
 
 KDevelop::ContextMenuExtension Plugin::contextMenuExtension(KDevelop::Context* context)

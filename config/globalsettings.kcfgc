@@ -1,4 +1,0 @@
-File=globalsettings.kcfg
-NameSpace=cppcheck
-ClassName=GlobalSettings
-Singleton=true
